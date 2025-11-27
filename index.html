@@ -1,8 +1,8 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>在一汽-大众工作是一种怎样的体验？ </title>
+  <title>生活中都有哪些「智商税」？</title>
   <style>
     * {
       box-sizing: border-box;
@@ -10,13 +10,11 @@
       padding: 0;
     }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-        Arial, "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
       background-color: #f6f6f6;
       color: #1a1a1a;
       line-height: 1.6;
     }
-
     /* 顶部导航 */
     .navbar {
       background-color: #ffffff;
@@ -64,13 +62,11 @@
       font-size: 14px;
       cursor: pointer;
     }
-
     .container {
       max-width: 960px;
       margin: 24px auto;
       padding: 0 16px;
     }
-
     .question-card {
       background-color: #fff;
       padding: 24px 24px 18px;
@@ -78,7 +74,6 @@
       box-shadow: 0 1px 3px rgba(26, 26, 26, 0.06);
       margin-bottom: 16px;
     }
-
     /* 话题标签 */
     .question-topics {
       margin-bottom: 10px;
@@ -95,7 +90,6 @@
       font-size: 14px;
       cursor: pointer;
     }
-
     /* 标题+右侧数据 */
     .question-header-row {
       display: flex;
@@ -117,7 +111,6 @@
       color: #1a1a1a;
       margin-bottom: 8px;
     }
-
     .question-side {
       display: flex;
       align-items: stretch;
@@ -142,7 +135,6 @@
       font-weight: 700;
       color: #000000;
     }
-
     /* 问题按钮区 */
     .question-actions {
       margin-top: 18px;
@@ -200,7 +192,6 @@
     .btn-good-question.voted {
       color: #175199;
     }
-
     /* 好问题/分享图标 */
     .icon-good {
       margin-right: 4px;
@@ -221,8 +212,7 @@
     .btn-share-question.shared .icon-share svg {
       fill: #175199;
     }
-
-    /* 48 个回答 + 默认排序 */
+    /* 回答标题 */
     .answer-header {
       margin: 16px 0 8px;
       font-size: 15px;
@@ -240,7 +230,6 @@
       cursor: pointer;
       user-select: none;
     }
-
     .answer-card {
       background-color: #fff;
       padding: 20px 24px 16px;
@@ -249,7 +238,6 @@
       margin-bottom: 12px;
       position: relative;
     }
-
     /* 头像+用户信息行（折叠前后统一） */
     .answer-user-row,
     .author-row {
@@ -286,8 +274,7 @@
       font-size: 12px;
       border: 1px solid #d7e9ff;
     }
-
-    /* 正文折叠 */
+    /* 正文区域（不再折叠） */
     .answer-content-wrapper {
       position: relative;
       margin-bottom: 8px;
@@ -296,11 +283,8 @@
     .answer-content {
       font-size: 15px;
       color: #1a1a1a;
-      overflow: hidden;
+      overflow: visible;
       transition: max-height 0.25s ease;
-    }
-    .answer-content.collapsed {
-      max-height: 96px;
     }
     .fade-mask {
       display: none;
@@ -319,18 +303,6 @@
     .answer-content.collapsed + .fade-mask {
       display: block;
     }
-    .answer-toggle {
-      font-size: 13px;
-      color: #175199;
-      cursor: pointer;
-      user-select: none;
-      display: inline-block;
-      margin-bottom: 8px;
-    }
-    .answer-toggle:hover {
-      text-decoration: underline;
-    }
-
     /* 回答底部：赞同 + 收藏 + 喜欢 靠左 */
     .answer-footer {
       display: flex;
@@ -371,7 +343,6 @@
       cursor: pointer;
       font-size: 13px;
     }
-
     .answer-actions {
       display: inline-flex;
       align-items: center;
@@ -384,40 +355,20 @@
       display: inline-flex;
       align-items: center;
     }
-
     /* 收藏/喜欢 图标放大 */
     .action-item span.icon-big {
       margin-right: 4px;
       font-size: 18px;
       line-height: 1;
     }
-
     .action-item.active {
       color: #175199;
     }
-
     .divider {
       border: none;
       border-top: 1px solid #ebebeb;
       margin: 16px 0;
     }
-
-    /* 查看剩余回答 */
-    .view-more-answers {
-      background-color: #fff;
-      padding: 14px 0;
-      text-align: center;
-      font-size: 16px;
-      color: #8590a6;
-      border-radius: 4px;
-      box-shadow: 0 1px 3px rgba(26,26,26,0.06);
-      cursor: pointer;
-      margin-bottom: 8px;
-    }
-    .more-answers {
-      margin-top: 8px;
-    }
-
     /* 折叠入口 */
     .hidden-entry {
       font-size: 14px;
@@ -432,7 +383,6 @@
     .hidden-entry:hover .hidden-count {
       color: #175199;
     }
-
     .hidden-answers {
       display: none;
       margin-top: 8px;
@@ -458,7 +408,6 @@
       background-color: #fafafa;
       box-shadow: 0 1px 2px rgba(0,0,0,0.03);
     }
-
     .footer {
       text-align: center;
       font-size: 12px;
@@ -489,29 +438,31 @@
     <!-- 问题区域 -->
     <div class="question-card">
       <div class="question-topics">
-        <div class="topic-pill">一汽-大众</div>
-        <div class="topic-pill">大众集团（Volkswagen Group）</div>
+        <div class="topic-pill">销售</div>
+        <div class="topic-pill">欺骗</div>
+        <div class="topic-pill">低智商社会</div>
+        <div class="topic-pill">反智主义</div>
+        <div class="topic-pill">坑爹</div>
       </div>
 
       <div class="question-header-row">
         <div class="question-main">
           <div class="question-title">
-            在一汽-大众工作是一种怎样的体验？
+            生活中都有哪些「智商税」？
           </div>
           <div class="question-detail">
-            已经签约 FAW-VW。希望在职的前辈们赐教，从工作环境、上升空间、人际关系几个方面解答，谢谢了。
+            智商税，就是利用他人智商不高（也可以解释为蠢）而定向征收的费用。比如孕妇防辐射服就能算一个。你们还知道哪些？
           </div>
         </div>
-
         <!-- 关注者 / 被浏览 -->
         <div class="question-side">
           <div class="side-item">
             <div class="side-label">关注者</div>
-            <div class="side-number">1,020</div>
+            <div class="side-number">27,787</div>
           </div>
           <div class="side-item">
             <div class="side-label">被浏览</div>
-            <div class="side-number">805,047</div>
+            <div class="side-number">13,152,161</div>
           </div>
         </div>
       </div>
@@ -525,7 +476,7 @@
         <!-- 好问题按钮 -->
         <button class="btn btn-text btn-good-question" data-base-count="11">
           <span class="icon-good">▲</span>
-          <span class="good-text">好问题 11</span>
+          <span class="good-text">好问题 221</span>
         </button>
 
         <!-- 分享按钮 -->
@@ -540,9 +491,9 @@
       </div>
     </div>
 
-    <!-- 回答标题：48 个回答 + 默认排序 -->
+    <!-- 回答标题 -->
     <div class="answer-header">
-      <div class="answer-count">48 个回答</div>
+      <div class="answer-count">正常回答示例如下</div>
       <div class="answer-sort">默认排序 ▾</div>
     </div>
 
@@ -551,30 +502,24 @@
       <div class="answer-user-row">
         <img class="answer-avatar" src="1.jpg" alt="匿名用户">
         <div>
-          <div class="answer-author">匿名用户</div>
-          <div class="answer-meta">赞同 143 · 发布于 2021-02-05</div>
+          <div class="answer-author">邹先生</div>
+          <div class="answer-meta">赞同 17 · 发布于 2015-12-24 22:10</div>
         </div>
       </div>
-
       <div class="answer-content-wrapper">
-        <div class="answer-content collapsed">
-          新工厂整体环境还是很不错的，车间比较干净，自动化程度也比较高。节奏相对紧张，
-          但稳定下来之后还可以接受。<br><br>
-          职业发展上，如果你是工程技术岗，刚进去几年主要还是熟悉流程和体系，后面会有机会
-          往项目管理或者技术专家方向发展。<br><br>
-          人际关系上整体比较简单，多数同事就是做好本职工作，下班各回各家。遇到新品导入
-          或者改造项目的时候，会比较辛苦一点，但也正好是学习提升的机会。
+        <div class="answer-content">
+          脑x金、红桃x、中华x精、三x浆、生命x号等<br><br>
+          电视购物卖的各种手串21天学会，xxx语言大部分A股散户x租宝类p2p<br><br>
+          先想到这么多，欢迎补充。
         </div>
         <div class="fade-mask"></div>
       </div>
-      <div class="answer-toggle">展开阅读全文 ▾</div>
-
       <div class="answer-footer">
         <div class="vote-group">
-          <button class="btn-vote-up" data-base-count="143">
+          <button class="btn-vote-up" data-base-count="17">
             <span class="triangle">▲</span>
             <span class="vote-label">赞同</span>
-            <span class="vote-count">143</span>
+            <span class="vote-count">17</span>
           </button>
           <button class="btn-vote-down">▼</button>
         </div>
@@ -592,31 +537,26 @@
     <!-- 回答 2 -->
     <div class="answer-card">
       <div class="answer-user-row">
-        <img class="answer-avatar" src="1.jpg" alt="匿名用户">
+        <img class="answer-avatar" src="2.jpg" alt="匿名用户">
         <div>
-          <div class="answer-author">匿名用户</div>
-          <div class="answer-meta">赞同 45 · 发布于 2020-03-10</div>
+          <div class="answer-author">大韭哥</div>
+          <div class="answer-meta">赞同 14 · 发布于 2016-01-25 12:38</div>
         </div>
       </div>
-
       <div class="answer-content-wrapper">
-        <div class="answer-content collapsed">
-          工资结构由基本工资 + 津贴 + 奖金组成，如果包含夜班、学历工资等，整体还可以。
-          但需要心理预期的是，流水线或现场岗会比较辛苦，加班在旺季是常态。<br><br>
-          福利方面，五险一金、班车、食堂这些都有，节假日也会有不同形式的补贴或者活动。
-          如果你比较看重稳定性和长期发展，这里还是可以考虑的。<br><br>
-          但如果你更追求快速晋升或者多元化平台，可能需要结合自己的职业规划再做选择。
+        <div class="answer-content">
+          各种卖得超贵的【取自纯天然的】维生素【保健品】。<br><br>
+          没错，汤成倍健，我黑的就是你。<br><br>
+          各位一定要吃纯天然的话，为什么不好好吃饭呢？
         </div>
         <div class="fade-mask"></div>
       </div>
-      <div class="answer-toggle">展开阅读全文 ▾</div>
-
       <div class="answer-footer">
         <div class="vote-group">
-          <button class="btn-vote-up" data-base-count="45">
+          <button class="btn-vote-up" data-base-count="14">
             <span class="triangle">▲</span>
             <span class="vote-label">赞同</span>
-            <span class="vote-count">45</span>
+            <span class="vote-count">14</span>
           </button>
           <button class="btn-vote-down">▼</button>
         </div>
@@ -634,26 +574,21 @@
     <!-- 回答 3 -->
     <div class="answer-card">
       <div class="answer-user-row">
-        <img class="answer-avatar" src="1.jpg" alt="匿名用户">
+        <img class="answer-avatar" src="3.jpg" alt="匿名用户">
         <div>
-          <div class="answer-author">匿名用户</div>
-          <div class="answer-meta">赞同 12 · 发布于 2020-01-15</div>
+          <div class="answer-author">Shimmy</div>
+          <div class="answer-meta">赞同 12 · 发布于 2022-07-12 11:20</div>
         </div>
       </div>
-
       <div class="answer-content-wrapper">
-        <div class="answer-content collapsed">
-          总体来说，这里的体系比较成熟、流程规范，如果你想系统了解车企运作和大众体系，
-          还是一份不错的经历。<br><br>
-          但也要考虑到体量大、层级多，很多事情需要按流程一步步来，有时候会觉得决策链条
-          较长、变化节奏不如互联网公司快。<br><br>
-          我个人在这里的几年时间里，收获了对制造业和供应链协同的整体认知，也认识了不少
-          很靠谱的同事。但最终还是基于个人发展选择了离开，去了一家更小但变化更快的公司。
+        <div class="answer-content">
+          有那么几种奇怪的事情<br><br>
+          可以不吃的时候 额外吃什么东西 用来减肥<br><br>
+          可以不做的时候 额外做什么事情 用来省力<br><br>
+          可以不用的时候 额外买什么东西 用来省钱
         </div>
         <div class="fade-mask"></div>
       </div>
-      <div class="answer-toggle">展开阅读全文 ▾</div>
-
       <div class="answer-footer">
         <div class="vote-group">
           <button class="btn-vote-up" data-base-count="12">
@@ -677,134 +612,36 @@
     <!-- 分割线 -->
     <hr class="divider">
 
-    <!-- 查看剩余 45 条回答 -->
-    <div class="view-more-answers" id="viewMoreAnswers">
-      查看剩余 45 条回答
-    </div>
-
-    <!-- 额外两个正常回答（点击上面的按钮后显示） -->
-    <div class="more-answers" id="moreAnswers" style="display:none;">
-
-      <!-- 回答 4 示例 -->
-      <div class="answer-card">
-        <div class="answer-user-row">
-          <img class="answer-avatar" src="1.jpg" alt="匿名用户">
-          <div>
-            <div class="answer-author">匿名用户</div>
-            <div class="answer-meta">赞同 23 · 发布于 2022-11-02</div>
-          </div>
-        </div>
-
-        <div class="answer-content-wrapper">
-          <div class="answer-content collapsed">
-            培训体系还是比较完整的，新人入职会有集中培训，然后安排到科室里由师傅带。
-            只要你愿意学，老同事一般都挺愿意帮忙。<br><br>
-            车间管理比较“德系”，对安全和规范要求很细，比如上岗前的点检、工装佩戴、
-            操作记录这些，一开始会觉得繁琐，但习惯之后能明显感觉到出问题的概率低很多。<br><br>
-            如果你之前没接触过制造业，前半年建议多去现场看、多问“为什么这样设计流程”，
-            比单纯坐办公室看报表有用得多。
-          </div>
-          <div class="fade-mask"></div>
-        </div>
-        <div class="answer-toggle">展开阅读全文 ▾</div>
-
-        <div class="answer-footer">
-          <div class="vote-group">
-            <button class="btn-vote-up" data-base-count="23">
-              <span class="triangle">▲</span>
-              <span class="vote-label">赞同</span>
-              <span class="vote-count">23</span>
-            </button>
-            <button class="btn-vote-down">▼</button>
-          </div>
-          <div class="answer-actions">
-            <span class="action-item action-collect">
-              <span class="icon-big">★</span><span class="collect-text">收藏</span>
-            </span>
-            <span class="action-item action-like">
-              <span class="icon-big">♥</span><span class="like-text">喜欢</span>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 回答 5 示例 -->
-      <div class="answer-card">
-        <div class="answer-user-row">
-          <img class="answer-avatar" src="1.jpg" alt="匿名用户">
-          <div>
-            <div class="answer-author">匿名用户</div>
-            <div class="answer-meta">赞同 8 · 发布于 2023-05-21</div>
-          </div>
-        </div>
-
-        <div class="answer-content-wrapper">
-          <div class="answer-content collapsed">
-            生活节奏方面，因为是两班倒或者三班倒，刚开始会有点不适应，特别是夜班。
-            但是公司周边配套还行，租房、吃饭都不算麻烦。<br><br>
-            班组气氛很看班长和骨干，遇到负责又好沟通的领导，会舒服很多，也更容易留下来。
-            如果氛围一般，建议主动多参与活动，让别人知道你是愿意融入团队的。<br><br>
-            对女生来说，某些岗位体力消耗会大一点，不过公司在岗位安排上还是会适当考虑，
-            不太可能让你长期做特别重体力的工序。
-          </div>
-          <div class="fade-mask"></div>
-        </div>
-        <div class="answer-toggle">展开阅读全文 ▾</div>
-
-        <div class="answer-footer">
-          <div class="vote-group">
-            <button class="btn-vote-up" data-base-count="8">
-              <span class="triangle">▲</span>
-              <span class="vote-label">赞同</span>
-              <span class="vote-count">8</span>
-            </button>
-            <button class="btn-vote-down">▼</button>
-          </div>
-          <div class="answer-actions">
-            <span class="action-item action-collect">
-              <span class="icon-big">★</span><span class="collect-text">收藏</span>
-            </span>
-            <span class="action-item action-like">
-              <span class="icon-big">♥</span><span class="like-text">喜欢</span>
-            </span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
     <!-- 折叠回答入口 -->
     <div class="hidden-entry" id="toggleHidden">
-      <span class="hidden-count">15 个回答被折叠</span>
+      <span class="hidden-count">折叠回答示例如下</span>
     </div>
 
-    <!-- 折叠回答列表：共 15 个（2 个详细 + 13 个 fake） -->
+    <!-- 折叠回答列表 -->
     <div class="hidden-answers" id="hiddenList">
-
       <div class="inner-title-row">
         <div class="inner-line"></div>
-        <div class="inner-title-text">15 个回答被折叠</div>
+        <div class="inner-title-text">折叠回答示例如下</div>
         <div class="inner-line"></div>
       </div>
 
       <!-- 折叠回答 1 -->
       <div class="answer-card">
         <div class="author-row">
-          <img class="answer-avatar" src="1.jpg" alt="匿名用户">
-          <div class="author-name">匿名用户</div>
-          <div class="folded-tag">该回答已被折叠 ⌄</div>
+          <img class="answer-avatar" src="4.jpg" alt="匿名用户">
+          <div class="author-name">我是狗</div>
+          <div class="folded-tag">人工审核后，该回答已被折叠⌄</div>
         </div>
         <div class="answer-content">
-         ……
+          CFA，工作不久就发现了
         </div>
-        <div class="folded-meta">编辑于 2021-06-09 21:19</div>
-
+        <div class="folded-meta">发布于 2016-10-22 13:15</div>
         <div class="answer-footer" style="margin-top:8px;">
           <div class="vote-group">
-            <button class="btn-vote-up" data-base-count="3">
+            <button class="btn-vote-up" data-base-count="1">
               <span class="triangle">▲</span>
               <span class="vote-label">赞同</span>
-              <span class="vote-count">3</span>
+              <span class="vote-count">1</span>
             </button>
             <button class="btn-vote-down">▼</button>
           </div>
@@ -822,15 +659,14 @@
       <!-- 折叠回答 2 -->
       <div class="answer-card">
         <div class="author-row">
-          <img class="answer-avatar" src="1.jpg" alt="匿名用户">
-          <div class="author-name">匿名用户</div>
-          <div class="folded-tag">该回答已被折叠 ⌄</div>
+          <img class="answer-avatar" src="5.jpg" alt="匿名用户">
+          <div class="author-name">nell nell</div>
+          <div class="folded-tag">人工审核后，该回答已被折叠 ⌄</div>
         </div>
         <div class="answer-content">
-          快跑！
+          唉，就没有人和我一样把智商税理解为“智商太高到需要交税的地步”的人么？
         </div>
-        <div class="folded-meta">发布于 2019-09-05 19:11</div>
-
+        <div class="folded-meta">编辑于 2015-12-22 00:22</div>
         <div class="answer-footer" style="margin-top:8px;">
           <div class="vote-group">
             <button class="btn-vote-up" data-base-count="1">
@@ -854,15 +690,14 @@
       <!-- 折叠回答 3 -->
       <div class="answer-card">
         <div class="author-row">
-          <img class="answer-avatar" src="1.jpg" alt="匿名用户">
-          <div class="author-name">匿名用户</div>
-          <div class="folded-tag">该回答已被折叠 ⌄</div>
+          <img class="answer-avatar" src="6.jpg" alt="匿名用户">
+          <div class="author-name">蒋梦梦</div>
+          <div class="folded-tag">人工审核后，该回答已被折叠 ⌄</div>
         </div>
         <div class="answer-content">
-         赶紧跑！
+          知乎首答，经常捡垃圾的人应该都知道我说的是什么
         </div>
-        <div class="folded-meta">编辑于 2020-12-08 21:19</div>
-
+        <div class="folded-meta">编辑于 2017-06-24 16:59 </div>
         <div class="answer-footer" style="margin-top:8px;">
           <div class="vote-group">
             <button class="btn-vote-up" data-base-count="2">
@@ -882,8 +717,39 @@
           </div>
         </div>
       </div>
-      <!-- 其余 13 个折叠回答可按需补充占位 -->
 
+      <!-- 折叠回答 4 -->
+      <div class="answer-card">
+        <div class="author-row">
+          <img class="answer-avatar" src="7.jpg" alt="匿名用户">
+          <div class="author-name">钟文</div>
+          <div class="folded-tag">人工审核后，该回答已被折叠 ⌄</div>
+        </div>
+        <div class="answer-content">
+          百花齐放！
+        </div>
+        <div class="folded-meta">编辑于 2017-02-14 08:44</div>
+        <div class="answer-footer" style="margin-top:8px;">
+          <div class="vote-group">
+            <button class="btn-vote-up" data-base-count="2">
+              <span class="triangle">▲</span>
+              <span class="vote-label">赞同</span>
+              <span class="vote-count">2</span>
+            </button>
+            <button class="btn-vote-down">▼</button>
+          </div>
+          <div class="answer-actions">
+            <span class="action-item action-collect">
+              <span class="icon-big">★</span><span class="collect-text">收藏</span>
+            </span>
+            <span class="action-item action-like">
+              <span class="icon-big">♥</span><span class="like-text">喜欢</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 其余 13 个折叠回答可按需补位 -->
     </div>
 
     <div class="footer">
@@ -953,38 +819,11 @@
       }
     });
 
-    // 回答正文展开 / 收起
-    document.querySelectorAll('.answer-card').forEach(function (card) {
-      const contentWrapper = card.querySelector('.answer-content-wrapper');
-      if (!contentWrapper) return;
-      const content = contentWrapper.querySelector('.answer-content');
-      const toggle = card.querySelector('.answer-toggle');
-      if (!content || !toggle) return;
-
-      toggle.addEventListener('click', function () {
-        const isCollapsed = content.classList.contains('collapsed');
-        if (isCollapsed) {
-          content.classList.remove('collapsed');
-          toggle.textContent = '收起 ▲';
-        } else {
-          content.classList.add('collapsed');
-          toggle.textContent = '展开阅读全文 ▾';
-          const rect = card.getBoundingClientRect();
-          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          window.scrollTo({
-            top: scrollTop + rect.top - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
     // 赞同按钮
     document.querySelectorAll('.btn-vote-up').forEach(function (btn) {
       const base = parseInt(btn.getAttribute('data-base-count') || '0', 10);
       const labelSpan = btn.querySelector('.vote-label');
       const countSpan = btn.querySelector('.vote-count');
-
       btn.addEventListener('click', function () {
         const voted = btn.classList.contains('voted');
         if (voted) {
@@ -1032,34 +871,15 @@
     const toggleHidden = document.getElementById('toggleHidden');
     const hiddenList = document.getElementById('hiddenList');
     let hiddenOpen = false;
-
     if (toggleHidden && hiddenList) {
       toggleHidden.addEventListener('click', () => {
         hiddenOpen = !hiddenOpen;
         if (hiddenOpen) {
           hiddenList.style.display = 'block';
-          toggleHidden.querySelector('.hidden-count').textContent = '收起折叠的 15 个回答';
+          toggleHidden.querySelector('.hidden-count').textContent = '收起折叠的回答';
         } else {
           hiddenList.style.display = 'none';
-          toggleHidden.querySelector('.hidden-count').textContent = '15 个回答被折叠';
-        }
-      });
-    }
-
-    // “查看剩余 45 条回答”：展开/收起额外两个正常回答
-    const viewMore = document.getElementById('viewMoreAnswers');
-    const moreAnswers = document.getElementById('moreAnswers');
-    let moreOpen = false;
-
-    if (viewMore && moreAnswers) {
-      viewMore.addEventListener('click', () => {
-        moreOpen = !moreOpen;
-        if (moreOpen) {
-          moreAnswers.style.display = 'block';
-          viewMore.textContent = '收起剩余 45 条回答';
-        } else {
-          moreAnswers.style.display = 'none';
-          viewMore.textContent = '查看剩余 45 条回答';
+          toggleHidden.querySelector('.hidden-count').textContent = '折叠回答示例如下';
         }
       });
     }
