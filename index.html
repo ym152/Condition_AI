@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>   
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
@@ -409,13 +409,22 @@
     }
     .hidden-answers .answer-card {
       background-color: #fafafa;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     }
     .footer {
       text-align: center;
       font-size: 12px;
       color: #8590a6;
       margin: 24px 0;
+    }
+    .footer-btn {
+      padding: 6px 16px;
+      font-size: 12px;
+      border-radius: 4px;
+      border: 1px solid #0084ff;
+      background: #0084ff;
+      color: #ffffff;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -748,11 +757,18 @@
         </div>
       </div>
 
-      <!-- 其余 13 个折叠回答可按需补位 -->
+      <!-- 其余折叠回答可按需补位 -->
     </div>
 
     <div class="footer">
-      本页面为实验HTML，非知乎官方页面。
+      <button
+        class="footer-btn"
+        id="returnBtn"
+        style="visibility:hidden;"
+        onclick="window.location.href='https://qualtricsxmxhqsslfq5.qualtrics.com/jfe/form/SV_9RyY4KhJhLHDOyq';"
+      >
+        返回问卷
+      </button>
     </div>
   </div>
 
@@ -905,6 +921,14 @@
 
     // 初始化状态
     updateHiddenUI();
+
+    // 返回按钮：进入界面 5 秒后出现，但提前占位，避免二次滑动
+    const returnBtn = document.getElementById('returnBtn');
+    if (returnBtn) {
+      setTimeout(() => {
+        returnBtn.style.visibility = 'visible';
+      }, 5000);
+    }
   </script>
 </body>
 </html>
